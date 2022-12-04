@@ -10,7 +10,6 @@
 
   &__label {
     @apply text-silver relative text-[11px] mb-[5px];
-
   }
 
   &__input {
@@ -20,6 +19,7 @@
     display: block;
     margin-top: -5px;
     padding: 0;
+
     @apply outline-none border-b border-b-silver;
 
     &.error {
@@ -30,15 +30,16 @@
       @apply outline-none border-b-black;
     }
 
-    &:placeholder-shown+label {
-      max-width: 66.66%;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      pointer-events: none;
-
-      transform-origin: left bottom;
-      transform: translate(0, 1.6rem) scale(1.81818);
+    &:placeholder-shown {
+      & + label {
+        max-width: 66.66%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        pointer-events: none;
+        transform-origin: left bottom;
+        transform: translate(0, 1.6rem) scale(1.81818);
+      }
     }
 
     &:focus::-webkit-input-placeholder {
@@ -47,15 +48,16 @@
 
     &:not(:placeholder-shown) + label,
     &:focus + label {
-      transform: translate(0, 0) scale(1); 
-      cursor: pointer; 
+      transform: translate(0, 0) scale(1);
+      cursor: pointer;
     }
   }
 
   &__message {
-    height:12px;
+    height: 12px;
     margin-top: 2px;
     font-size: 12px;
+
     @apply text-orange;
   }
 }
