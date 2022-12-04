@@ -30,12 +30,11 @@
       @apply outline-none border-b-black;
     }
 
-    &:placeholder-shown + label {
+    &:placeholder-shown+label {
       max-width: 66.66%;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      user-selectable: none;
       pointer-events: none;
 
       transform-origin: left bottom;
