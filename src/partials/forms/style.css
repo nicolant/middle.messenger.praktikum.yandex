@@ -1,0 +1,55 @@
+.form {
+    background-color: var(--color-clean-bg);
+    box-shadow: 0px 0px 100px var(--color-brand_blue-lt);
+    border-radius: 30px 0px;
+    position: relative;
+}
+
+.login-form,
+.registration-form {
+    &:before {
+        content:"";
+        position: absolute;
+        background: url(/src/assets/Logo.svg) no-repeat;
+        background-size: contain;
+        width: 145px;
+        height:58px;
+        top:-15px;
+        left:-18px;
+    }
+}
+
+.login-form {
+    padding: 86px 32px 64px 64px;
+    .inputfield {
+        width: 280px;
+    }
+
+    .button {
+        margin:50px 0 10px;
+    }
+}
+
+.registration-form {
+    padding:64px 32px 44px 64px;
+    display: flex;
+
+    .inputfield {
+        width: 280px;
+    }
+
+    .column {
+        &.column1  {
+            padding-top: 44px; 
+            margin-right:32px;
+        }
+
+        &.column2 {
+            .button {
+                margin:46px 0 10px;
+            }
+        }
+    }
+
+    
+}

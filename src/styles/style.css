@@ -1,0 +1,50 @@
+@import "normalize.css";
+@import "fonts.css";
+@import "variables.css";
+@import "../partials/*/*.css";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Manrope, Arial, sans-serif;
+ }
+
+.main {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--color-main-bg-lt) 0%, var(--color-main-bg) 100%);
+}
+
+.centered-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--color-brand_blue);
+}
+
+h2 {
+  font-size: 30px;
+}
+
+.link {
+  font-size: 16;
+  font-weight: bold;
+  color: var(--color-brand_pink);
+  text-decoration: none;
+
+  &-block {
+    display: block;
+  }
+}
+ 

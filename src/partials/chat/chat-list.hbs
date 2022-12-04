@@ -1,0 +1,15 @@
+<div class="chat-list">
+    <header class="chat-list__header">
+        <img class="chat-list__logo" src="/src/assets/Logo.svg" />
+        <button class="chat-list__profile"></button>
+    </header>
+    <div class="chat-list__container">
+        <ul class="chat-list__items">
+            {{> 'chat/chat-list-item' image='/src/assets/Avatar.jpg' title="Аня" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit" time="10:49" unread=1 }}
+            {{> 'chat/chat-list-item' image='/src/assets/Avatar_3.jpg' title="Андрей" text="Хорошо, приду! До завтра" time="12:48" }}
+            {{> 'chat/chat-list-item' title="Tet-a-tet" text="Lorem ipsum dolor sit amet" time="now" unread=4 }}
+            {{> 'chat/chat-list-item' image='/src/assets/Avatar_3.jpg' title="Чат" text="Текст" }}
+            {{> 'chat/chat-list-item' image='/src/assets/Avatar_4.jpg' title="Чат" text="Текст" }}
+        </ul>
+    </div>
+</div>

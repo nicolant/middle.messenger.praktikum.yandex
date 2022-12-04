@@ -1,0 +1,16 @@
+:root {
+  --color-main-bg: #90C7E0;
+  --color-main-bg-lt: color-mod(var(--color-main-bg) l(+15%));
+  --color-clean-bg: white;
+
+  --color-brand_blue: #5BA6D8;
+  --color-brand_blue-lt: color-mod(var(--color-brand_blue) l(+10%));
+  --color-brand_pink: #FE938C;
+  --color-brand_pink-lt: color-mod(var(--color-brand_pink) l(+8%));
+
+  --color-brand_black: #2a475b;
+  --color-brand_orange: #D04E17;
+
+  --color-brand_silver: #B7B7B7;
+  --color-brand_pearl: #EAECF0;
+}

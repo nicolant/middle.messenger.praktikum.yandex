@@ -1,0 +1,127 @@
+.chat-container {
+    height:100%;
+   display:flex;
+   align-items:center;
+}
+
+.chat-list {
+  flex-shrink: 0;
+  width:310px;
+  height:100%;
+  padding-top:12px;
+  background-color: var(--color-clean-bg);
+  box-shadow: 0px 0px 100px var(--color-brand_blue-lt);
+  display:flex;
+  flex-direction:column;
+
+  &__header {
+    display:flex;
+    padding:0 12px;
+    justify-content:space-between;
+    margin-bottom:20px;
+  }
+
+  &__logo {
+    margin-top:-5px;
+    width:87px;
+    height:auto;
+  }
+
+  &__profile {
+    border:0;
+    outline:0;
+    cursor:pointer;
+    width:30px;
+    height:30px;
+    background:url(/src/assets/Profile_icon.svg) no-repeat;
+    background-size: contain;
+  }
+
+
+
+  &__items {
+    margin: 0;
+    padding: 0 12px;
+  }
+
+  &__container {
+    overflow-x: hidden;
+  }
+
+  &__item {
+    height: 80px;
+    border-bottom: 1px solid var(--color-brand_pearl);
+    padding: 12px 0;
+    margin: 0;
+    list-style: none;
+    display:flex;
+    align-items:center;
+    position: relative;
+  }
+
+  
+}
+
+.chat-list-item {
+    
+    
+    &__avatar,
+    &__noavatar {
+        width:58px;
+        height:58px;
+        border-radius:999px;
+        margin-right:12px;
+    }
+    &__noavatar {
+      background: linear-gradient(180deg, var(--color-main-bg-lt) 0%, var(--color-main-bg) 100%);
+    }
+
+    &__text {
+      flex-grow:1;
+    }
+
+    &__title,
+    &__latest {
+      font-size:14px;
+      margin:0;
+      color:var(--color-brand_black);
+    }
+
+    &__title {
+      margin-bottom: 4px;
+    }
+
+    &__info {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    &__unread {
+                background-color: var(--color-brand_pink);
+        width:20px;
+        height:20px;
+        border-radius:10px;
+        color:white;
+        font-weight:bold;
+        font-size:11px;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    &__time {
+         font-size:11px;
+    }
+
+}
+
+.chat-select-notification {
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin:50px;
+}

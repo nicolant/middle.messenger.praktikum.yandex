@@ -1,0 +1,35 @@
+{
+  "name": "yp-module1",
+  "version": "0.0.1",
+  "description": "Chat web-app",
+  "scripts": {
+    "dev": "parcel src/pages/index.hbs --no-cache",
+    "build": "parcel build src/pages/index.hbs --no-cache",
+    "watch": "parcel watch src/pages/index.hbs --no-cache"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicolant/yp-module1.git"
+  },
+  "author": "Nikolay Antoshchenkov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicolant/yp-module1/issues"
+  },
+  "homepage": "https://github.com/nicolant/yp-module1#readme",
+  "devDependencies": {
+    "@anikin/parcel-transformer-handlebars": "^1.0.9",
+    "@csstools/postcss-cascade-layers": "^2.0.0",
+    "@parcel/resolver-glob": "^2.8.0",
+    "caniuse-lite": "^1.0.30001436",
+    "handlebars": "^4.7.7",
+    "parcel": "^2.8.0",
+    "postcss-color-mod-function": "^3.0.3",
+    "postcss-css-reset": "^1.0.2",
+    "postcss-custom-properties": "^12.1.11",
+    "postcss-nested": "^6.0.0"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

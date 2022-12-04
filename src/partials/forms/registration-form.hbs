@@ -1,0 +1,19 @@
+<div class="centered-container">
+    <form class="form registration-form">
+        <div class="column column1">
+            <h2>Регистрация</h2>
+            {{> 'input-field/input-field' name="email" label='почта' message="error" }}
+            {{> 'input-field/input-field' name="login" label='логин' }}
+            {{> 'input-field/input-field' type="password" name="password" label='пароль' }}
+            {{> 'input-field/input-field' type="password" name="passwordRepeat" label='повторите пароль' }}
+        </div>
+        <div class="column column2">
+            {{> 'input-field/input-field' name="first_name" label='имя' }}
+            {{> 'input-field/input-field' name="second_name" label='фамилия' }}
+            {{> 'input-field/input-field' name="display_name" label='имя в чате' }}
+            {{> 'input-field/input-field' name="phone" label='телефон' }}
+            {{> 'button/button' submit=true text='Создать пользователя'}}
+        <a class="link link-block" href="/src/pages/login.hbs">Уже зарегистрированы?</a>
+        </div>
+    </form>
+</div>
