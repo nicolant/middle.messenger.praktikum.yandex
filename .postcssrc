@@ -1,10 +1,6 @@
 {
     plugins: {
         tailwindcss: true,
-        "@csstools/postcss-cascade-layers": true,
-        "postcss-css-reset": true,
-        "postcss-custom-properties": true,
-        "postcss-color-mod-function": true,
         "postcss-nested": true
     }
 }
