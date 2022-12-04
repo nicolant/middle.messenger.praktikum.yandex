@@ -1,22 +1,16 @@
-@import "normalize.css";
 @import "fonts.css";
-@import "variables.css";
 @import "../partials/*/*.css";
 
-* {
-  box-sizing: border-box;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-body {
-  font-family: Manrope, Arial, sans-serif;
- }
 
 .main {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  background: linear-gradient(180deg, var(--color-main-bg-lt) 0%, var(--color-main-bg) 100%);
+  @apply w-screen h-screen overflow-hidden;
+  @apply bg-gradient-to-b from-sky-light to-sky;
 }
+ 
 
 .centered-container {
   width: 100%;
@@ -30,7 +24,11 @@ h1,
 h2,
 h3,
 h4 {
-  color: var(--color-brand_blue);
+  @apply text-blue font-bold;
+}
+
+h2 {
+  @apply my-[0.83em]
 }
 
 h2 {
@@ -39,9 +37,7 @@ h2 {
 
 .link {
   font-size: 16;
-  font-weight: bold;
-  color: var(--color-brand_pink);
-  text-decoration: none;
+   @apply text-pink font-bold decoration-0;
 
   &-block {
     display: block;
