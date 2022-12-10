@@ -1,4 +1,6 @@
 @import "fonts.css";
+@import "forms.css";
+@import "../pages/*/*.css";
 @import "../partials/*/*.css";
 
 @tailwind base;

@@ -1,0 +1,12 @@
+.error {
+    @apply relative border-2 border-clean pt-10 pb-20 px-20 rounded-3xl text-clean text-center;
+    &-code {
+        @apply text-[10rem] font-bold;
+    }
+    &-message {
+        @apply text-xl;
+    }
+    .button {
+        @apply absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2;
+    }
+}

@@ -5,16 +5,18 @@ module.exports = {
   theme: {
     colors: {
       'sky': {
-        light: '#c1e0f0',
-        DEFAULT: "#81bfdb"
+        'light': '#c1e0f0',
+        'faint': '#E2F5FF',
+        'DEFAULT': "#81bfdb"
       },
       'clean': "#FFFFFF",
       'blue': "#53a9d1",
       'pink': {
-        light: "#efa5a0",
-        DEFAULT: "#FE938C"
+        'light': "#efa5a0",
+        'DEFAULT': "#FE938C"
       },
       'black': "#2a475b",
+      'navy': "#667085",
       'orange': "#D04E17",
       'silver': "#B7B7B7",
       'pearl': "#EAECF0"

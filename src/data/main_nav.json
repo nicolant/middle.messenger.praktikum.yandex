@@ -1,0 +1,30 @@
+[
+    {
+        "url": "login/index",
+        "title": "Вход"
+    },
+    {
+        "url": "registration/index",
+        "title": "Регистрация"
+    },
+    {
+        "url": "chat/index",
+        "title": "Выбор чата"
+    },
+    {
+        "url": "chat/chat-feed",
+        "title": "Лента переписки"
+    },
+    {
+        "url": "profile/index",
+        "title": "Профиль пользователя"
+    },
+    {
+        "url": "errors/client",
+        "title": "Ошибочный запрос"
+    },
+    {
+        "url": "errors/server",
+        "title": "Ошибка сервера"
+    }
+]

@@ -1,5 +1,1 @@
-{{#if submit }}
-<input class="button button-primary" type="submit" value="{{text}}" />
-{{else}}
-<button class="button button-primary">{{text}}</button>
-{{/if}}
+<input class="button button-primary{{#if class}} {{class}}{{/if}}" type="submit" value="{{text}}" />

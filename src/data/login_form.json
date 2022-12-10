@@ -1,0 +1,19 @@
+{
+    "title": "Мессенджер",
+    "inputfields": [
+        {
+            "label": "логин",
+            "name": "login"
+        },
+        {
+            "label": "пароль",
+            "name": "password",
+            "type": "password"
+        }
+    ],
+    "submit_label": "Войти",
+    "link": {
+        "url": "/src/pages/registration/index.hbs",
+        "text": "Еще не зарегистрированы?"
+    }
+}

@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "description": "Chat web-app",
   "scripts": {
-    "dev": "parcel src/pages/index.hbs",
-    "build": "parcel build src/pages/index.hbs",
-    "start": "parcel build src/pages/index.hbs && node server.js"
+    "dev": "parcel src/pages/index/index.hbs --no-cache --open",
+    "build": "parcel build src/pages/index/index.hbs --no-cache",
+    "start": "parcel build src/pages/index/index.hbs && node server.js"
   },
   "repository": {
     "type": "git",

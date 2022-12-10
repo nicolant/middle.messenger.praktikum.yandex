@@ -1,0 +1,18 @@
+.form {
+    @apply bg-clean shadow-blue shadow-2xl rounded-tl-[30px] rounded-br-[30px] relative;
+ }
+
+.form-decorated {
+    &:before {
+        content:"";
+        position: absolute;
+        background: url(/src/assets/Logo.svg) no-repeat;
+        background-size: contain;
+        width: 145px;
+        height:58px;
+        top:-15px;
+        left:-18px;
+    }
+}
+
+
