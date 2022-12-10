@@ -2,6 +2,14 @@
 ---
 Прототип мессенджера Venti
 
+<<<<<<< HEAD
+=======
+---
+[Ссылка](https://github.com/nicolant/middle.messenger.praktikum.yandex/pull/1) на pull request
+---
+
+
+>>>>>>> deploy
 
 ## Описание
 
@@ -37,3 +45,7 @@ https://www.figma.com/file/HKL287eq0BRpPebSqFFcLD/Venti-messenger-(%D0%AF%D0%BD%
 
 ### Также не забудьте проверить, что репозиторий публичный.
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> deploy

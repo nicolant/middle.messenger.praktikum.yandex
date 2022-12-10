@@ -7,12 +7,26 @@
   }
 
   &__label {
+<<<<<<< HEAD:src/partials/inputfields/style.css
     @apply text-silver relative text-[.7rem] mb-1;
 
   }
 
   &__input {
     @apply text-black text-xl block -mt-1 p-0;
+=======
+    @apply text-silver relative text-[11px] mb-[5px];
+  }
+
+  &__input {
+    @apply text-black;
+    font-size: 20px;
+    line-height: 28px;
+    display: block;
+    margin-top: -5px;
+    padding: 0;
+
+>>>>>>> deploy:src/partials/input-field/style.css
     @apply outline-none border-b border-b-silver;
 
     &.error {
@@ -23,13 +37,31 @@
       @apply outline-none border-b-black;
     }
 
+<<<<<<< HEAD:src/partials/inputfields/style.css
     &:placeholder-shown+label {
       @apply pointer-events-none origin-bottom-left;
       transform: translate(0, 1.75rem) scale(1.81818);
+=======
+    &:placeholder-shown {
+      & + label {
+        max-width: 66.66%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        pointer-events: none;
+        transform-origin: left bottom;
+        transform: translate(0, 1.6rem) scale(1.81818);
+      }
+    }
+
+    &:focus::-webkit-input-placeholder {
+      opacity: 1;
+>>>>>>> deploy:src/partials/input-field/style.css
     }
 
     &:not(:placeholder-shown) + label,
     &:focus + label {
+<<<<<<< HEAD:src/partials/inputfields/style.css
       @apply cursor-default;
       transform: translate(0, 0) scale(1); 
     }
@@ -39,13 +71,18 @@
     }
     &:disabled + label {
       @apply cursor-default; 
+=======
+      transform: translate(0, 0) scale(1);
+      cursor: pointer;
+>>>>>>> deploy:src/partials/input-field/style.css
     }
   }
 
   &__message {
-    height:12px;
+    height: 12px;
     margin-top: 2px;
     font-size: 12px;
+
     @apply text-orange;
   }
 }
