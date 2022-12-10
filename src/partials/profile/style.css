@@ -1,0 +1,38 @@
+.form-profile {
+  @apply relative pt-[2.125rem] pr-8 pb-8 pl-16 flex;
+
+  .inputfield {
+    @apply w-72;
+  }
+
+  .column {
+    &.column1 {
+      @apply pt-10 mr-8;
+    }
+
+    &.column2 {
+      .button {
+        @apply mt-6;
+      }
+    }
+  }
+
+  .link-block {
+    @apply mt-12;
+  }
+
+  &__avatar {
+    @apply cursor-pointer absolute -top-6 -left-[calc(7.625rem/2)];
+    .img {
+      @apply w-[7.625rem] h-[7.625rem] rounded-full;
+    }
+    .icon {
+      @apply absolute bottom-0 right-0 w-11 h-11 rounded-full flex items-center justify-center;
+      @apply bg-gradient-to-b from-pink-light to-pink;
+    }
+  }
+
+  .btn-logout {
+    @apply absolute right-4 top-4 w-5 h-5 bg-[url(/src/assets/Logout-icon.svg)] bg-contain;
+  }
+}

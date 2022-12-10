@@ -1,0 +1,48 @@
+@import "fonts.css";
+@import "forms.css";
+@import "../pages/*/*.css";
+@import "../partials/*/*.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.main {
+  @apply w-screen h-screen overflow-hidden;
+  @apply bg-gradient-to-b from-sky-light to-sky;
+}
+ 
+
+.centered-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  @apply text-blue font-bold;
+}
+
+h2 {
+  @apply my-[0.83em]
+}
+
+h2 {
+  font-size: 30px;
+}
+
+.link {
+  font-size: 16;
+   @apply text-pink font-bold decoration-0;
+
+  &-block {
+    display: block;
+  }
+}
+ 

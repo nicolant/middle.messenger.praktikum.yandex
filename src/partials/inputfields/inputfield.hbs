@@ -1,0 +1,6 @@
+<div class="inputfield">
+    <div class="inputfield__message">{{message}}</div>
+    <input name="{{name}}" class="{{#if message}}error {{/if}}inputfield__input" placeholder=" " type="{{#if type}}{{type}}{{else}}text{{/if}}"
+        value="{{text}}"{{#if disabled}} disabled{{/if}}></input>
+    <label class="inputfield__label" for="{{name}}">{{label}}</label>
+</div>

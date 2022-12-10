@@ -1,0 +1,17 @@
+<div class="centered-container">
+    
+        <form class="form form-profile">
+            <button class="btn-logout"></button>
+            {{> profile/avatar avatar=profile_form.avatar}}
+            <div class="column column1">
+                <h2>{{profile_form.title}}</h2>
+                {{> 'inputfields/inputfields' inputfields=profile_form.inputfields.column1}}
+                <a class="link link-block" href="{{profile_form.link.url}}">{{profile_form.link.text}}</a>
+            </div>
+            <div class="column column2">
+                {{> 'inputfields/inputfields' inputfields=profile_form.inputfields.column2}}
+                {{> 'button/button' text=profile_form.submit_label class="form-profile__button"}}
+             </div>
+        </form>
+    
+</div>
