@@ -37,7 +37,3 @@ https://www.figma.com/file/HKL287eq0BRpPebSqFFcLD/Venti-messenger-(%D0%AF%D0%BD%
 
 ### Также не забудьте проверить, что репозиторий публичный.
 
-<<<<<<< HEAD
-=======
-
->>>>>>> deploy
