@@ -56,8 +56,9 @@
   }
 }
 
-::-webkit-input-placeholder {
-  transition: inherit;
-  opacity: 0;
+input,textarea {
+  &::placeholder {
+    transition: inherit;
+    color: transparent !important;
+  }
 }
-
