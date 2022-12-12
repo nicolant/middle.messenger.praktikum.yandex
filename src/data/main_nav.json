@@ -12,7 +12,7 @@
         "title": "Выбор чата"
     },
     {
-        "url": "chat/chat-feed",
+        "url": "chat-feed/index",
         "title": "Лента переписки"
     },
     {
