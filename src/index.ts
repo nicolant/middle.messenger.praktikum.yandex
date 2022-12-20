@@ -1,7 +1,6 @@
 import { Router, registerComponent } from 'modules';
 
 import './styles/style.css';
-import './styles/forms.css';
 
 import { Button } from 'components/Button';
 import { Link } from 'components/Link';
