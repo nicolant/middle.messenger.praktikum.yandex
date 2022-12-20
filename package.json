@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "description": "Chat web-app",
   "scripts": {
-    "dev": "parcel src/pages/index/index.hbs --no-cache --open",
-    "build": "parcel build src/pages/index/index.hbs --no-cache",
-    "start": "parcel build src/pages/index/index.hbs && node server.js"
+    "dev": "parcel src/index.html --no-cache --open",
+    "build": "parcel build src/index.html --no-cache",
+    "start": "parcel build src/index.html --no-cache && node server.mjs"
   },
   "repository": {
     "type": "git",
@@ -17,17 +17,35 @@
     "url": "https://github.com/nicolant/yp-module1/issues"
   },
   "homepage": "https://github.com/nicolant/yp-module1#readme",
+  "alias": {
+    "modules": "./src/modules",
+    "components": "./src/components",
+    "pages": "./src/pages"
+  },
   "devDependencies": {
-    "@anikin/parcel-transformer-handlebars": "1.0.9",
+    "@orzechowskid/eslint-import-resolver-parcel": "^1.0.5",
     "@parcel/resolver-glob": "^2.8.1",
-    "handlebars": "4.7.7",
+    "@parcel/transformer-inline-string": "^2.8.1",
+    "@typescript-eslint/eslint-plugin": "^5.46.1",
+    "@typescript-eslint/parser": "^5.46.1",
+    "eslint": "^8.30.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-import-resolver-parcel2": "^1.0.1",
+    "eslint-import-resolver-typescript": "^3.5.2",
+    "eslint-plugin-import": "^2.26.0",
     "parcel": "2.8.1",
     "postcss-nested": "6.0.0",
     "posthtml": "^0.16.6",
     "posthtml-inline-svg": "^0.2.0",
-    "tailwindcss": "3.2.4"
+    "stylelint": "^14.16.0",
+    "stylelint-config-standard": "^29.0.0",
+    "stylelint-config-tailwindcss": "^0.0.7",
+    "tailwindcss": "3.2.4",
+    "typescript": "^4.9.4"
   },
   "dependencies": {
-    "express": "4.18.2"
+    "express": "4.18.2",
+    "handlebars": "^4.7.7",
+    "nanoid": "^4.0.0"
   }
 }
