@@ -35,12 +35,3 @@ h2 {
   font-size: 30px;
 }
 
-.link {
-  font-size: 16;
-   @apply text-pink font-bold decoration-0;
-
-  &-block {
-    display: block;
-  }
-}
- 

@@ -1,5 +1,7 @@
-input.button,
-a.button {
-    @apply bg-gradient-to-b from-pink-light to-pink;
-    @apply px-[24px] py-[7px] text-clean font-bold border-none outline-none cursor-pointer rounded-full;
+.button {
+    @apply border-none outline-none cursor-pointer;
+    &.primary {
+        @apply bg-gradient-to-b from-pink-light to-pink;
+        @apply px-[24px] py-[7px] text-clean font-bold rounded-full;
+    }
 }

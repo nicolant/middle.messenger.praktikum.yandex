@@ -4,10 +4,11 @@ import template from 'bundle-text:./Button.hbs';
 import './Button.css';
 
 interface ButtonProps {
-  text: string;
-  onClick: () => void;
-  onMouseDown: () => void;
-  onMouseUp: () => void;
+  text?: string;
+  type?: string;
+  onClick?: EventListenerOrEventListenerObject;
+  onMouseDown?: EventListenerOrEventListenerObject;
+  onMouseUp?: EventListenerOrEventListenerObject;
 }
 
 export class Button extends Block {
@@ -16,7 +17,7 @@ export class Button extends Block {
   constructor({
     onClick, onMouseDown, onMouseUp, ...props
   }: ButtonProps) {
-    super({ ...props, events: { click: onClick, mousedown: onMouseDown, mouseup: onMouseUp } });
+    super({ ...props, events: { click: onClick!, mousedown: onMouseDown!, mouseup: onMouseUp! } });
   }
 
   protected render(): string {

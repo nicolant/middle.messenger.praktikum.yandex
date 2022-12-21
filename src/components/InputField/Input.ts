@@ -15,15 +15,24 @@ interface InputProps {
 export class Input extends Block {
   static componentName = 'Input';
 
+  value?: string = '';
+
   constructor({
-    onInput, onFocus, onBlur, onChange, ...props
+    onFocus, onBlur, onChange, ...props
   }: InputProps) {
     super({
       ...props,
       events: {
-        input: onInput, focus: onFocus, blur: onBlur, change: onChange,
+        input: (e: InputEvent): void => {
+          this.value = e.target.value;
+        },
+        focus: onFocus,
+        blur: onBlur,
+        change: onChange,
       },
+
     });
+    this.value = props.value;
   }
 
   protected render(): string {
@@ -33,8 +42,8 @@ export class Input extends Block {
       class="inputfield__input{{#if class}} {{class}}{{/if}}" 
       placeholder={{name}} 
       type="{{#if type}}{{type}}{{else}}text{{/if}}"
-      value={{value}}
-      {{#if disabled}} disabled{{/if}}>
+      {{#if disabled}} disabled{{/if}}
+      value={{value}}>
       </input>`;
   }
 }

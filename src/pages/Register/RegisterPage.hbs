@@ -1,9 +1,9 @@
 <div class="centered-container">
     <form class="form form-decorated form-login">
-        <h2>Мессенджер</h2>
+        <h2>Регистрация</h2>
         {{{ InputField ref="loginInputRef" name="login" label="логин" validationRule="login" value=loginValue }}}
         {{{ InputFieldPassword ref="passwordInputRef" name="password" label="пароль" value=passwordValue }}}
         {{{ Button class="primary" text="Войти" type="submit" onClick=onSubmit }}}
-        {{{ Link class="link-block" href="/register" text="Еще не зарегистрированы?" }}}
+        {{{ Link class="link-block" href="register" text="Еще не зарегистрированы?" }}}
     </form>
 </div>

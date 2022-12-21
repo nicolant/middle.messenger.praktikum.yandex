@@ -1,5 +1,5 @@
 .inputfield { 
-  @apply mb-2 flex flex-col-reverse;
+  @apply relative mb-2 flex flex-col-reverse;
 
   &__label, &__input {
     @apply    transition-transform duration-200;
@@ -53,6 +53,21 @@
 
     @apply text-orange;
   }
+
+  .icon-action {
+    @apply block absolute;
+    @apply w-4 h-4 bg-no-repeat bg-contain;
+    @apply bottom-[1.3rem] right-0;
+  } 
+
+  &-password .icon-action {
+    @apply bg-[url(/src/assets/Eye-closed-icon.svg)];
+    &.active {
+      @apply bg-[url(/src/assets/Eye-open-icon.svg)];
+    }
+    
+  }
+
 }
 
 input,textarea { 

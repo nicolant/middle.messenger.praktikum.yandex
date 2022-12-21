@@ -1,5 +1,9 @@
-input.button,
-a.button {
-    @apply bg-gradient-to-b from-pink-light to-pink;
-    @apply px-[24px] py-[7px] text-clean font-bold border-none outline-none cursor-pointer rounded-full;
-}
+.link {
+    font-size: 16;
+     @apply text-pink font-bold decoration-0;
+  
+    &-block {
+      display: block;
+    }
+  }
+   

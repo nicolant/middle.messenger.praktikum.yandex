@@ -10,50 +10,52 @@ interface InputFieldProps {
   error?: string;
   validationRule?: string;
   type?: string;
-  onInput?: () => void;
-  onFocus?: () => void;
-  onBlur?: () => void;
-  onChange?: () => void;
+  onInput?: EventListenerOrEventListenerObject;
+  onFocus?: EventListenerOrEventListenerObject;
+  onBlur?: EventListenerOrEventListenerObject;
+  onChange?: EventListenerOrEventListenerObject;
 }
 
 export class InputField extends Block {
   static componentName = 'InputField';
+
+  value?: string = '';
 
   constructor(props: InputFieldProps) {
     super();
     this.setProps({
       ...props,
       events: {
-        input: (): void => {
+        input: (e: InputEvent): void => {
+          this.value = e.target.value;
           this.refs.errorRef.setProps({ text: '' });
         },
         change: (): void => {
-          console.log('change');
-          const { value } = this.refs.inputRef.getContent() as HTMLInputElement;
-          this.setProps({ value });
-          const { validationRule } = props;
-          const text = validateValue(value, validationRule);
-          if (text) {
-            this.refs.errorRef.setProps({ text });
-          }
+          this.validate();
         },
       },
     });
   }
 
-  setType(newType: string) {
-    console.log('setType');
+  validate(): boolean {
+    console.log('validate');
     const { value } = this.refs.inputRef.getContent() as HTMLInputElement;
-    this.setProps({ value });
-    this.refs.inputRef.setProps({ type: newType });
+    const { validationRule } = this.props as InputFieldProps;
+    const text = validateValue(value, validationRule);
+    if (text) {
+      this.refs.errorRef.setProps({ text });
+      return false;
+    }
+    return true;
   }
 
   protected render(): string {
     return `
-    <div class="inputfield">
+    <div class="inputfield inputfield-{{name}}">
       {{{ErrorMessage ref="errorRef" message=error}}}
       {{{Input ref="inputRef" name=name type=type value=value}}}
       <label class="inputfield__label" for="{{name}}">{{label}}</label>
+      {{#if actionButton}}{{{ Button ref="iconRef" class="icon-action" onClick=onActionButtonClick }}}{{/if}}
     </div>
     `;
   }

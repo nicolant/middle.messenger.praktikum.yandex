@@ -1,15 +1,17 @@
 import { Router, Block } from 'modules';
 import { InputField } from 'components/InputField';
 
-import template from 'bundle-text:./LoginPage.hbs';
-import './LoginPage.css';
+import template from 'bundle-text:./RegisterPage.hbs';
+import './RegisterPage.css';
 
-export class LoginPage extends Block {
-  static componentName = 'LoginPage';
+export class RegisterPage extends Block {
+  static componentName = 'RegisterPage';
 
   constructor() {
     super();
-    this.props.onSubmit = this.onSubmit.bind(this);
+    this.setProps({
+      onSubmit: this.onSubmit.bind(this),
+    });
   }
 
   // eslint-disable-next-line class-methods-use-this
@@ -26,7 +28,9 @@ export class LoginPage extends Block {
         passwordValue: passwordInputField.value,
       };
       console.log(formValues);
-      Router.go('/chats');
+      Router.go('chats');
+    } else {
+      console.log('Invalid form values');
     }
 
     e.preventDefault();

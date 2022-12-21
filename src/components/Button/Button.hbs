@@ -1,1 +1,2 @@
-<input class="button {{#if class}} {{class}}{{/if}}" type="button" value="{{text}}" click=onClick />
+<input class="button{{#if class}} {{class}}{{/if}}" type="{{#if type}}{{type}}{{else}}button{{/if}}" value="{{text}}"
+  click=onClick />
