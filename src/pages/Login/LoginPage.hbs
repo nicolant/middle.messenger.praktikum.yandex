@@ -1,10 +1,12 @@
 <div class="centered-container">
-    <div class="form form-decorated form-login">
+    <form class="form form-decorated form-login">
         <h2>Мессенджер</h2>
-        {{{ InputField ref="login" name="login" label="логин" validationRule="login" value=loginValue }}}
-        {{{ InputField ref="password" name="password" type="password" label="пароль" validationRule="password"
+        {{{ InputField ref="loginInputRef" name="login" label="логин" validationRule="login" value=loginValue }}}
+        {{{ InputField ref="passwordInputRef" name="password" type="password" label="пароль" validationRule="password"
         value=passwordValue }}}
+        {{{ Button class="icon password-show-icon" text="Показать пароль" onMouseDown=showPassword
+        onMouseUp=hidePassword }}}
         {{{ Button text="Войти" onClick=onSubmit }}}
         {{{ Link class="link-block" href="register" text="Еще не зарегистрированы?" }}}
-    </div>
+    </form>
 </div>

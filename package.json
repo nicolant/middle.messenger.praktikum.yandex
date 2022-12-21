@@ -20,7 +20,8 @@
   "alias": {
     "modules": "./src/modules",
     "components": "./src/components",
-    "pages": "./src/pages"
+    "pages": "./src/pages",
+    "helpers": "./src/helpers"
   },
   "devDependencies": {
     "@orzechowskid/eslint-import-resolver-parcel": "^1.0.5",

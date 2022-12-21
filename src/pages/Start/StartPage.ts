@@ -2,12 +2,13 @@ import { Router, Block } from 'modules';
 import template from 'bundle-text:./StartPage.hbs';
 
 export class StartPage extends Block {
-  protected getStateFromProps() {
-    this.state = {
-      onClick: () => {
-        Router.go('login');
-      },
-    };
+  constructor() {
+    super();
+    this.setProps({ onClick: this.onClick });
+  }
+
+  onClick() {
+    Router.go('login');
   }
 
   render() {

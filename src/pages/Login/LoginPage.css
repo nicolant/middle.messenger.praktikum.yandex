@@ -1,7 +1,7 @@
 .form-login {
     @apply pt-[5.375rem] pr-8 pb-16 pl-16;
     .inputfield {
-        @apply w-72;
+        @apply w-[22rem];
     }
 
     .button {

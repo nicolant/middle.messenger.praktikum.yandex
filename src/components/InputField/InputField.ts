@@ -1,37 +1,58 @@
 import Block from 'modules/Block';
 
 import './InputField.css';
+import validateValue from 'helpers/validateValue';
 
 interface InputFieldProps {
   name?: string;
   label: string;
-  value?: string;
+  value: string;
   error?: string;
+  validationRule?: string;
+  type?: string;
   onInput?: () => void;
   onFocus?: () => void;
+  onBlur?: () => void;
+  onChange?: () => void;
 }
 
 export class InputField extends Block {
   static componentName = 'InputField';
 
   constructor(props: InputFieldProps) {
-    super({
+    super();
+    this.setProps({
       ...props,
-      onBlur: (e: FocusEvent): void => {
-        const inputEl = e.target as HTMLInputElement;
-        if (inputEl.value.length && inputEl.value.length < 4) this.refs.errorRef.setProps({ text: 'недостаточно символов' });
-      },
-      onInput: (e: InputEvent): void => {
-        this.refs.errorRef.setProps({ text: '' });
+      events: {
+        input: (): void => {
+          this.refs.errorRef.setProps({ text: '' });
+        },
+        change: (): void => {
+          console.log('change');
+          const { value } = this.refs.inputRef.getContent() as HTMLInputElement;
+          this.setProps({ value });
+          const { validationRule } = props;
+          const text = validateValue(value, validationRule);
+          if (text) {
+            this.refs.errorRef.setProps({ text });
+          }
+        },
       },
     });
+  }
+
+  setType(newType: string) {
+    console.log('setType');
+    const { value } = this.refs.inputRef.getContent() as HTMLInputElement;
+    this.setProps({ value });
+    this.refs.inputRef.setProps({ type: newType });
   }
 
   protected render(): string {
     return `
     <div class="inputfield">
       {{{ErrorMessage ref="errorRef" message=error}}}
-      {{{Input ref="inputRef" name=name type=type value=value onInput=onInput onFocus=onFocus onBlur=onBlur onInput=onInput}}}
+      {{{Input ref="inputRef" name=name type=type value=value}}}
       <label class="inputfield__label" for="{{name}}">{{label}}</label>
     </div>
     `;

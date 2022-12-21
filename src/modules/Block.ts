@@ -2,11 +2,6 @@ import EventBus from 'modules/EventBus';
 import { nanoid } from 'nanoid';
 import Handlebars from 'handlebars';
 
-interface BlockMeta<P = any> {
-  props: P;
-}
-
-// eslint-disable-next-line no-use-before-define
 type Events = Values<typeof Block.EVENTS>;
 
 export default class Block<P extends object = object> {
@@ -20,8 +15,6 @@ export default class Block<P extends object = object> {
   static componentName: string;
 
   public id = nanoid(6);
-
-  private readonly _meta: BlockMeta;
 
   protected _element: Nullable<HTMLElement> = null;
 
@@ -37,10 +30,6 @@ export default class Block<P extends object = object> {
 
   public constructor(props?: P) {
     const eventBus = new EventBus<Events>();
-
-    this._meta = {
-      props,
-    };
 
     this.getStateFromProps(props);
 
