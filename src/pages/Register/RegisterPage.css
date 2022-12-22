@@ -1,12 +1,19 @@
-.form-login {
-    @apply pt-[5.375rem] pr-8 pb-16 pl-16;
+.form-registration {
+    @apply pt-[2.125rem] pr-8 pb-8 pl-16 flex;
+  
     .inputfield {
-        @apply w-[22rem];
+      @apply w-72;
     }
-
-    .button.primary {
-        @apply mt-14 mb-3;
+  
+    .column {
+      &.column1 {
+        @apply pt-10 mr-8;
+      }
+  
+      &.column2 {
+        .button {
+          @apply mt-12 mb-3;
+        }
+      }
     }
-
-    
-}
+  }
