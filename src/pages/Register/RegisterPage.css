@@ -2,7 +2,7 @@
     @apply pt-[2.125rem] pr-8 pb-8 pl-16 flex;
   
     .inputfield {
-      @apply w-72;
+      @apply w-[22rem];
     }
   
     .column {

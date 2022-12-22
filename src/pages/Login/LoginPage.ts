@@ -18,7 +18,7 @@ export class LoginPage extends Block {
     const passwordInputField = this.refs.passwordInputRef as InputField;
 
     let isValid = true;
-    [loginInputField, passwordInputField].forEach((field) => { isValid = field.validate() && isValid; });
+    Object.values(this.refs).forEach((field) => { if (field instanceof InputField) isValid = field.validate() && isValid; });
 
     if (isValid) {
       const formValues = {

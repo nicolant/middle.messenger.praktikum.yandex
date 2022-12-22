@@ -60,14 +60,14 @@
     @apply bottom-[1.3rem] right-0;
   } 
 
-  &-password .icon-action {
-    @apply bg-[url(/src/assets/password-eye-icon.svg)];
-    &.active {
-      @apply bg-bottom;
+  &-password, &-passwordConfirmation {
+    & .icon-action {
+      @apply bg-[url(/src/assets/password-eye-icon.svg)];
+      &.active {
+        @apply bg-bottom;
+      }
     }
-    
   }
-
 }
 
 input,textarea { 

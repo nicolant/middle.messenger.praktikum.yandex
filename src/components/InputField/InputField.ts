@@ -8,7 +8,7 @@ interface InputFieldProps {
   label: string;
   value: string;
   error?: string;
-  validationRule?: string;
+  validation?: string;
   type?: string;
   onInput?: EventListenerOrEventListenerObject;
   onFocus?: EventListenerOrEventListenerObject;
@@ -19,15 +19,15 @@ interface InputFieldProps {
 export class InputField extends Block {
   static componentName = 'InputField';
 
-  value?: string = '';
+  value = '';
 
   constructor(props: InputFieldProps) {
     super();
     this.setProps({
       ...props,
       events: {
-        input: (e: InputEvent): void => {
-          this.value = e.target.value;
+        input: (e: Event): void => {
+          this.value = (e.target as HTMLInputElement).value;
           this.refs.errorRef.setProps({ text: '' });
         },
         change: (): void => {
@@ -40,13 +40,18 @@ export class InputField extends Block {
   validate(): boolean {
     console.log('validate');
     const { value } = this.refs.inputRef.getContent() as HTMLInputElement;
-    const { validationRule } = this.props as InputFieldProps;
-    const text = validateValue(value, validationRule);
+    let { validation } = this.props as InputFieldProps;
+    if (!validation) validation = this.props.name;
+    const text = validateValue(value, validation);
     if (text) {
-      this.refs.errorRef.setProps({ text });
+      this.setError(text);
       return false;
     }
     return true;
+  }
+
+  setError(text: string) {
+    this.refs.errorRef.setProps({ text });
   }
 
   protected render(): string {

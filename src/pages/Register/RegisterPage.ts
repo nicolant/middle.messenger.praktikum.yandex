@@ -16,13 +16,16 @@ export class RegisterPage extends Block {
 
   // eslint-disable-next-line class-methods-use-this
   onSubmit(e: MouseEvent): void {
-    const loginInputField = this.refs.loginInputRef as InputField;
-    const passwordInputField = this.refs.passwordInputRef as InputField;
-
     let isValid = true;
-    [loginInputField, passwordInputField].forEach((field) => { isValid = field.validate() && isValid; });
+    Object.values(this.refs).forEach((field) => { if (field instanceof InputField) isValid = field.validate() && isValid; });
 
-    if (isValid) {
+    let passwordsAreEqual = true;
+    if (this.refs.passwordInputRef.value !== this.refs.passwordConfirmationInputRef.value) {
+      this.refs.passwordConfirmationInputRef.setError('Пароли не совпадают');
+      passwordsAreEqual = false;
+    }
+
+    if (isValid && passwordsAreEqual) {
       const formValues = {
         loginValue: loginInputField.value,
         passwordValue: passwordInputField.value,
