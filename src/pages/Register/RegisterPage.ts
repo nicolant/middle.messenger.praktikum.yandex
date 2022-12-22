@@ -22,8 +22,8 @@ export class RegisterPage extends Form {
 
     if (isValid) {
       let passwordsAreEqual = true;
-      if (this.refs.passwordInputRef.value !== this.refs.passwordConfirmationInputRef.value) {
-        this.refs.passwordConfirmationInputRef.setError('Пароли не совпадают');
+      if ((this.refs.passwordInputRef as InputField).value !== (this.refs.passwordConfirmationInputRef as InputField).value) {
+        (this.refs.passwordConfirmationInputRef as InputField).setError('Пароли не совпадают');
         passwordsAreEqual = false;
       }
 

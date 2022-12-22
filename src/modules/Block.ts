@@ -27,7 +27,7 @@ export default class Block<P extends object = object> {
 
   protected _element: Nullable<HTMLElement> = null;
 
-  protected readonly props: BlockProps = {};
+  readonly props: BlockProps = {};
 
   protected children: { [id: string]: Block } = {};
 
@@ -130,7 +130,6 @@ export default class Block<P extends object = object> {
         this.eventBus().emit(Block.EVENTS.FLOW_CDU, { ...target }, target);
         return true;
       },
-      defineProperty: (target, prop) => true,
       deleteProperty() {
         throw new Error('Нет доступа');
       },
