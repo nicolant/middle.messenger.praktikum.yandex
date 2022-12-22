@@ -1,5 +1,5 @@
 .form-registration {
-    @apply pt-[2.125rem] pr-8 pb-8 pl-16 flex;
+    @apply pt-[2.125rem] pr-8 pb-12 pl-16 flex;
   
     .inputfield {
       @apply w-[22rem];

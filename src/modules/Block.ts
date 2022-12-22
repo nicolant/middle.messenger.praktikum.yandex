@@ -126,15 +126,11 @@ export default class Block<P extends object = object> {
         return typeof value === 'function' ? value.bind(target) : value;
       },
       set: (target: BlockProps, prop: string, value: any) => {
-        console.log('set', prop);
         target[prop] = value;
         this.eventBus().emit(Block.EVENTS.FLOW_CDU, { ...target }, target);
         return true;
       },
-      defineProperty: (target, prop) => {
-        console.log('define', prop);
-        return true;
-      },
+      defineProperty: (target, prop) => true,
       deleteProperty() {
         throw new Error('Нет доступа');
       },
@@ -175,7 +171,6 @@ export default class Block<P extends object = object> {
     const html = template({
       /* ...this.state, */ ...this.props, children: this.children, refs: this.refs,
     });
-    console.log(html);
     fragment.innerHTML = html;
 
     /**

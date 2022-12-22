@@ -1,10 +1,11 @@
-import { Router, Block } from 'modules';
+import { Router } from 'modules';
 import { InputField } from 'components/InputField';
+import { Form } from 'components/Form';
 
 import template from 'bundle-text:./RegisterPage.hbs';
 import './RegisterPage.css';
 
-export class RegisterPage extends Block {
+export class RegisterPage extends Form {
   static componentName = 'RegisterPage';
 
   constructor() {
@@ -16,8 +17,7 @@ export class RegisterPage extends Block {
 
   // eslint-disable-next-line class-methods-use-this
   onSubmit(e: MouseEvent): void {
-    let isValid = true;
-    Object.values(this.refs).forEach((field) => { if (field instanceof InputField) isValid = field.validate() && isValid; });
+    const isValid = this.validateFields();
 
     let passwordsAreEqual = true;
     if (this.refs.passwordInputRef.value !== this.refs.passwordConfirmationInputRef.value) {
@@ -26,12 +26,8 @@ export class RegisterPage extends Block {
     }
 
     if (isValid && passwordsAreEqual) {
-      const formValues = {
-        loginValue: loginInputField.value,
-        passwordValue: passwordInputField.value,
-      };
-      console.log(formValues);
-      Router.go('chats');
+      console.log(this.formValues);
+      // Router.go('chats');
     } else {
       console.log('Invalid form values');
     }

@@ -38,7 +38,6 @@ export class InputField extends Block {
   }
 
   validate(): boolean {
-    console.log('validate');
     const { value } = this.refs.inputRef.getContent() as HTMLInputElement;
     let { validation } = this.props as InputFieldProps;
     if (!validation) validation = this.props.name;
