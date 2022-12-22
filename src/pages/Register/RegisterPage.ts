@@ -17,22 +17,23 @@ export class RegisterPage extends Form {
 
   // eslint-disable-next-line class-methods-use-this
   onSubmit(e: MouseEvent): void {
+    e.preventDefault();
     const isValid = this.validateFields();
 
-    let passwordsAreEqual = true;
-    if (this.refs.passwordInputRef.value !== this.refs.passwordConfirmationInputRef.value) {
-      this.refs.passwordConfirmationInputRef.setError('Пароли не совпадают');
-      passwordsAreEqual = false;
-    }
+    if (isValid) {
+      let passwordsAreEqual = true;
+      if (this.refs.passwordInputRef.value !== this.refs.passwordConfirmationInputRef.value) {
+        this.refs.passwordConfirmationInputRef.setError('Пароли не совпадают');
+        passwordsAreEqual = false;
+      }
 
-    if (isValid && passwordsAreEqual) {
-      console.log(this.formValues);
+      if (passwordsAreEqual) {
+        console.log(this.formValues); return;
+      }
       // Router.go('chats');
-    } else {
-      console.log('Invalid form values');
     }
 
-    e.preventDefault();
+    console.log('Invalid form values');
   }
 
   render() {
