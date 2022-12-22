@@ -1,8 +1,8 @@
 .inputfield { 
   @apply relative mb-2 flex flex-col-reverse;
 
-  &__label, &__input {
-    @apply    transition-transform duration-200;
+  &__label {
+    @apply transition-transform duration-200 origin-bottom-left;
   }
 
   &__label {
@@ -28,7 +28,7 @@
     }
 
     &:placeholder-shown+label {
-      @apply pointer-events-none origin-bottom-left;
+      @apply pointer-events-none ;
       transform: translate(0, 1.75rem) scale(1.81818);
     }
 
@@ -56,14 +56,14 @@
 
   .icon-action {
     @apply block absolute;
-    @apply w-4 h-4 bg-no-repeat bg-contain;
+    @apply w-[1.125rem] h-[1.125rem] bg-no-repeat bg-top bg-cover;
     @apply bottom-[1.3rem] right-0;
   } 
 
   &-password .icon-action {
-    @apply bg-[url(/src/assets/Eye-closed-icon.svg)];
+    @apply bg-[url(/src/assets/password-eye-icon.svg)];
     &.active {
-      @apply bg-[url(/src/assets/Eye-open-icon.svg)];
+      @apply bg-bottom;
     }
     
   }
